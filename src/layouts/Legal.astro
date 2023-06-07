@@ -1,0 +1,46 @@
+---
+import MainLayout from './Main.astro';
+---
+
+<MainLayout>
+	<!-- page title -->
+	<section class="section section--first section--last section--head" data-bg="img/bg.jpg">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="section__wrap">
+						<!-- section title -->
+            <h2 class="section__title">{Astro.props.frontmatter.title}</h2>
+						<!-- end section title -->
+
+						<!-- breadcrumb -->
+						<ul class="breadcrumb">
+							<li class="breadcrumb__item"><a href="index.html">Home</a></li>
+              <li class="breadcrumb__item breadcrumb__item--active">{Astro.props.frontmatter.title}</li>
+						</ul>
+						<!-- end breadcrumb -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- end page title -->
+	
+  <section class="section section--first section--bg" style="padding-top: 32px">
+		<div class="container">
+			<!-- article -->
+			<div class="article">
+				<div class="row">
+					<div class="col-12">
+						<!-- article content -->
+						<div class="article__content article__content--page">
+              <slot />
+						</div>
+						<!-- end article content -->
+					</div>
+				</div>
+			</div>
+			<!-- end article -->
+		</div>
+	</section>
+</MainLayout>
